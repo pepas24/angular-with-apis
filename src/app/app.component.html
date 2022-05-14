@@ -1,7 +1,11 @@
 <div class="container mt-4">
   <div class="row g-2">
     <div class="col-3">
-        <div class="p-4 border shadow-sm rounded-3" [ngStyle]="{'background-color': pokemonTypeColorMapping[pokemon.type]}">
+        <div
+          *ngFor="let pokemon of pokemons"
+          class="p-4 border shadow-sm rounded-3"
+          [ngStyle]="{'background-color': pokemonTypeColorMapping[pokemon.type]}"
+        >
           <p class="h3 text-ligth">{{ pokemon.name }}</p>
             <div class="d-flex flex-row">
               <p class="des fw-light me-2 text-ligth">Tipo fuego, etc</p>

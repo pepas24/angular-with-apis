@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { pokemonMock } from './services/pokemon.mock';
+import { pokemonsMock } from './services/pokemon.mock';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,12 @@ import { pokemonMock } from './services/pokemon.mock';
 })
 export class AppComponent {
   title = 'angular-with-apis';
-  pokemon = pokemonMock;
+  pokemons = pokemonsMock;
 
   pokemonTypeColorMapping: Record<string, string> = {
     normal: 'gray',
-    hierba: 'green',
+    grass: 'green',
+    electric: 'yellow',
   }
   pokemonTypeColor = '#4eceb1';
 }
