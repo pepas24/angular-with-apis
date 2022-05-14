@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon, PokemonType } from './interfaces/pokemon.iternface';
 import { PokemonService } from './services/pokemon/pokemon.service';
 
 @Component({
@@ -8,28 +9,27 @@ import { PokemonService } from './services/pokemon/pokemon.service';
 })
 export class AppComponent implements OnInit {
   title = 'angular-with-apis';
-  pokemons: any[] = [];
+  pokemons: Pokemon[] = [];
 
-  pokemonTypeColorMapping: Record<string, string> = {
+  pokemonTypeColorMapping: Record<PokemonType, string> = {
     normal: 'gray',
     grass: 'green',
     electric: 'yellow',
   }
-  pokemonTypeColor = '#4eceb1';
 
   constructor(
     private pokemonService: PokemonService,
   ) {}
 
   ngOnInit() {
-    this.pokemonService.getPokemons().subscribe(
-      data => {
+    this.pokemonService.getPokemons().subscribe({
+      next: data => {
         console.log(data);
         this.pokemons = data;
       },
-      err => {
+      error: err => {
         console.error(err);
       }
-    )
+    })
   }
 }

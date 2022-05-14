@@ -1,3 +1,5 @@
+import { Pokemon } from "src/app/interfaces/pokemon.iternface"
+
 function pokemonMock() {
   return {
     name: 'Ditto',
@@ -21,7 +23,7 @@ function pokemonMock() {
 };
 
 //export const pokemonsMock = Array(8).fill(pokemonMock());
-export const pokemonsMock = [
+export const pokemonsMock: Pokemon[] = [
   {
     name: 'Ditto',
     images: {
