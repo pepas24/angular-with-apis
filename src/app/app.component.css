@@ -1,0 +1,24 @@
+.bg-pokemon {
+    background-color: #4eceb1;
+}
+
+.badge {
+    background: #e3f1f0;
+    border-radius: 5px;
+}
+
+.text-ligth{
+    color: #FFFFFF;
+}
+
+.text-dark{
+    color: #000000;
+}
+
+.des {
+    font-size: 14px;
+}
+
+.bg-pokemon-secundary {
+    background-color: #FFFFFF;
+}
